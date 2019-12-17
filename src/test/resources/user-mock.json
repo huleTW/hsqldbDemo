@@ -1,0 +1,16 @@
+[
+  {
+    "request": {
+      "method": "get",
+      "uri": "/"
+    },
+    "response": {
+      "json": {
+        "id": "id",
+        "firstName": "hu",
+        "lastName": "le",
+        "career": "Engineer"
+      }
+    }
+  }
+]
