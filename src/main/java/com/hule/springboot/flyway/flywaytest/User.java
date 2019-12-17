@@ -7,9 +7,9 @@ import javax.persistence.Table;
 
 @Table(name = "billionaires")
 @Entity
-public class Users {
+public class User {
     @Id
-    private int id;
+    private String id;
 
     @Column
     private String firstName;
@@ -20,11 +20,11 @@ public class Users {
     @Column
     private String career;
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

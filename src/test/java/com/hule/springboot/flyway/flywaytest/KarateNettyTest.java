@@ -1,21 +1,26 @@
 package com.hule.springboot.flyway.flywaytest;
 
+import com.intuit.karate.netty.FeatureServer;
 import lombok.extern.slf4j.Slf4j;
 import org.flywaydb.test.FlywayTestExecutionListener;
-import org.flywaydb.test.annotation.FlywayTest;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.web.server.LocalServerPort;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.TestExecutionListeners;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.context.support.DependencyInjectionTestExecutionListener;
 import org.springframework.test.context.transaction.TransactionalTestExecutionListener;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.core.Is.is;
+import java.io.File;
+import java.util.HashMap;
+
+import static org.junit.Assert.assertEquals;
+
 
 @SpringBootTest(classes = {Application.class}, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @Slf4j
@@ -25,39 +30,34 @@ import static org.hamcrest.core.Is.is;
         TransactionalTestExecutionListener.class,
         FlywayTestExecutionListener.class
 })
-@FlywayTest
-class FlywayClassTest {
+@ActiveProfiles("test")
+public class KarateNettyTest {
 
     @LocalServerPort
     private int port;
 
     @Autowired
-    private UserRepository repository;
+    private UserClient userClient;
 
-    @BeforeEach
-    void setUp() {
+    private FeatureServer server;
+
+    @Before
+    public void setUp() throws Exception {
+        File file = new File(getClass().getClassLoader().getResource("user-mock.feature").getFile());
+        server = FeatureServer.start(file, 9009, false, new HashMap<>());
     }
 
     @Test
-    void contextLoads() {
-        assertThat(repository.findAll().size(), is(4));
+    public void test_payment() {
+        User user = userClient.getUser("id");
+        assertEquals(user.getId(), "id");
+        assertEquals(user.getFirstName(), "hu");
+        assertEquals(user.getLastName(), "le");
+        assertEquals(user.getCareer(), "Engineer");
     }
 
-    @Test
-    void contextLoads1() {
-        assertThat(repository.findAll().size(), is(3));
+    @After
+    public void tearDown() throws Exception {
+        server.stop();
     }
-
-    @Test
-    void contextLoads2() {
-        log.error("hule " + port);
-        User user = new User();
-        user.setCareer("aaa");
-        user.setId("13");
-        user.setFirstName("first");
-        user.setLastName("last");
-        repository.save(user);
-        assertThat(repository.findAll().size(), is(4));
-    }
-
 }

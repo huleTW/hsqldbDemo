@@ -51,12 +51,12 @@ class FlywayMethodTest {
     @Test
     void contextLoads2() {
         log.error("hule " + port);
-        Users users = new Users();
-        users.setCareer("aaa");
-        users.setId(13);
-        users.setFirstName("first");
-        users.setLastName("last");
-        repository.save(users);
+        User user = new User();
+        user.setCareer("aaa");
+        user.setId("13");
+        user.setFirstName("first");
+        user.setLastName("last");
+        repository.save(user);
         assertThat(repository.findAll().size(), is(4));
     }
 
