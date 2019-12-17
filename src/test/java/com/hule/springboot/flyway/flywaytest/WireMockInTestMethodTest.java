@@ -18,7 +18,7 @@ import static org.junit.Assert.assertEquals;
 @Slf4j
 @RunWith(SpringRunner.class)
 @ActiveProfiles("test")
-public class WireMockTest {
+public class WireMockInTestMethodTest {
 
     @Autowired
     private UserClient userClient;
@@ -27,7 +27,7 @@ public class WireMockTest {
     public WireMockRule wireMockRule = new WireMockRule(options().port(9009));
 
     @Test
-    public void statusMessage() {
+    public void test_user() {
         stubFor(get(urlEqualTo("/"))
                 .willReturn(aResponse()
                         .withStatus(200)
@@ -39,6 +39,5 @@ public class WireMockTest {
         assertEquals(user.getFirstName(), "hu");
         assertEquals(user.getLastName(), "le");
         assertEquals(user.getCareer(), "Engineer");
-
     }
 }

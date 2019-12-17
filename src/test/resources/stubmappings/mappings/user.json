@@ -1,0 +1,22 @@
+{
+  "mappings": [
+    {
+      "request": {
+        "url": "/",
+        "method": "GET"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "jsonBody": {
+          "id": "id",
+          "firstName": "hu",
+          "lastName": "le",
+          "career": "Engineer"
+        }
+      }
+    }
+  ]
+}
