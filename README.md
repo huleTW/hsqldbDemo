@@ -17,3 +17,9 @@ sql.syntax_mys=true
 | 格式不对的数据： '0000-00-00' 或者 '2001-00-00'  |可以存 | 不能存 |
 | trim char value | 支持 | 不支持 |
 
+## stub server
+### Karate Netty
+
+demo：[KarateNettyTest](https://github.com/huleTW/hsqldbDemo/blob/master/src/test/java/com/hule/springboot/flyway/flywaytest/KarateNettyTest.java),[user-mock.feature](https://github.com/huleTW/hsqldbDemo/blob/master/src/test/resources/user-mock.feature)
+
+
