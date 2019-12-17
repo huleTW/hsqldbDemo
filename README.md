@@ -19,7 +19,21 @@ sql.syntax_mys=true
 
 ## stub server
 ### Karate Netty
-
+依赖：
+```
+        <dependency>
+            <groupId>com.intuit.karate</groupId>
+            <artifactId>karate-junit4</artifactId>
+            <version>0.9.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.flywaydb.flyway-test-extensions</groupId>
+            <artifactId>flyway-spring5-test</artifactId>
+            <version>5.0.0</version>
+            <scope>test</scope>
+        </dependency>
+```
 demo：[KarateNettyTest](https://github.com/huleTW/hsqldbDemo/blob/master/src/test/java/com/hule/springboot/flyway/flywaytest/KarateNettyTest.java),[user-mock.feature](https://github.com/huleTW/hsqldbDemo/blob/master/src/test/resources/user-mock.feature)
 
 
