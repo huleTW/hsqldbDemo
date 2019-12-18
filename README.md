@@ -20,7 +20,7 @@ sql.syntax_mys=true
 ## stub server
 ### Karate Netty
 依赖：
-```
+```shell script
         <dependency>
             <groupId>com.intuit.karate</groupId>
             <artifactId>karate-junit4</artifactId>
@@ -34,6 +34,41 @@ sql.syntax_mys=true
             <scope>test</scope>
         </dependency>
 ```
-demo：[KarateNettyTest](https://github.com/huleTW/hsqldbDemo/blob/master/src/test/java/com/hule/springboot/flyway/flywaytest/KarateNettyTest.java),[user-mock.feature](https://github.com/huleTW/hsqldbDemo/blob/master/src/test/resources/user-mock.feature)
+demo：
+* [KarateNettyTest](https://github.com/huleTW/hsqldbDemo/blob/master/src/test/java/com/hule/springboot/flyway/flywaytest/KarateNettyTest.java)
+* [user-mock.feature](https://github.com/huleTW/hsqldbDemo/blob/master/src/test/resources/user-mock.feature)
 
 
+### Moco
+依赖：
+```shell script
+        <dependency>
+            <groupId>com.github.dreamhead</groupId>
+            <artifactId>moco-junit</artifactId>
+            <version>1.0.0</version>
+            <scope>test</scope>
+        </dependency>
+```
+demo: 
+* [MocoTest](https://github.com/huleTW/hsqldbDemo/blob/master/src/test/java/com/hule/springboot/flyway/flywaytest/MocoTest.java)
+* [user-mock.json](https://github.com/huleTW/hsqldbDemo/blob/master/src/test/resources/user-mock.json)
+### WireMock
+依赖：
+```shell script
+        <dependency>
+            <groupId>com.intuit.karate</groupId>
+            <artifactId>karate-netty</artifactId>
+            <version>0.9.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.intuit.karate</groupId>
+            <artifactId>karate-junit4</artifactId>
+            <version>0.9.2</version>
+            <scope>test</scope>
+        </dependency>
+```
+demo: 
+* [WireMockInTestMethodTest](https://github.com/huleTW/hsqldbDemo/blob/master/src/test/java/com/hule/springboot/flyway/flywaytest/WireMockInTestMethodTest.java)
+* [WireMockWithStubMappingTest](https://github.com/huleTW/hsqldbDemo/blob/master/src/test/java/com/hule/springboot/flyway/flywaytest/WireMockWithStubMappingTest.java)
+* [stubmappings](https://github.com/huleTW/hsqldbDemo/tree/master/src/test/resources/stubmappings)
