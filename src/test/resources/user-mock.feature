@@ -1,7 +1,4 @@
-Feature: payment service mock
-
-Background:
-* def user = {id:'id', firstName:'hu', lastName:'le', career:'Engineer'}
+Feature: user service mock
 
 Scenario: pathMatches('/') && methodIs('get')
-    * def response = user
+    * def response = {id:'id', firstName:'hu', lastName:'le', career:'Engineer'}
