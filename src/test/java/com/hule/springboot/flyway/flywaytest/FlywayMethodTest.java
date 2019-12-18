@@ -44,8 +44,9 @@ class FlywayMethodTest {
     }
 
     @Test
+    @FlywayTest
     void contextLoads1() {
-        assertThat(repository.findAll().size(), is(4));
+        assertThat(repository.findAll().size(), is(3));
     }
 
     @Test
