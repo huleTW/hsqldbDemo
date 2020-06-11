@@ -6,7 +6,7 @@ Hsql可以支持标准sql，同时有兼容模式，可以支持部分sql的特�
 
 ## MySql：
 ### 使用方式
-``` 
+```bash
 sql.syntax_mys=true
 ```
 ### 不同的语法
@@ -20,7 +20,7 @@ sql.syntax_mys=true
 ## stub server
 ### Karate Netty
 依赖：
-```shell script
+```xml
         <dependency>
             <groupId>com.intuit.karate</groupId>
             <artifactId>karate-junit4</artifactId>
@@ -41,7 +41,7 @@ demo：
 
 ### Moco
 依赖：
-```shell script
+```xml
         <dependency>
             <groupId>com.github.dreamhead</groupId>
             <artifactId>moco-junit</artifactId>
@@ -54,7 +54,7 @@ demo:
 * [user-mock.json](https://github.com/huleTW/hsqldbDemo/blob/master/src/test/resources/user-mock.json)
 ### WireMock
 依赖：
-```shell script
+```xml
         <dependency>
             <groupId>com.intuit.karate</groupId>
             <artifactId>karate-netty</artifactId>
